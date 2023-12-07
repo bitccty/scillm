@@ -1,0 +1,31 @@
+models:
+  scillm:
+    model_name: scillm
+    agent_name: DeepSpeedAgent
+    dataset: PretrainDataset
+    # test_dataset: PretrainTestDataset
+    test_dataset: PretrainQASPERTestDataset
+  scillm-sft:
+    model_name: SciSFTLLM
+    agent_name: DeepSpeedAgent
+    dataset: SFTDataset
+    test_dataset: QASPERTestDataset
+
+# ========= Global Configuration ========= #
+logging_step: 5
+eval_interval: 0.05
+max_dataset_cache_size: 1
+# max_seq_length: 4096
+max_seq_length: 2048
+test_max_seq_length: 2048
+warmup_ratio: 0.05
+
+# total_step: 7752 # Latex
+# total_step: 5904 # Natural
+# total_step: 6360 # Structure base
+# total_step: 61688 # Structure
+# total_step: 51264 # Structure full
+total_step: 500
+seed: 0
+epoch: 8
+# ========= Global Configuration ========= #
